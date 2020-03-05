@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "1017262118453",
+    "firebase_url": "https://login-e9b97.firebaseio.com",
+    "project_id": "login-e9b97",
+    "storage_bucket": "login-e9b97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017262118453:android:9cb8d15b673294a072437c",
+        "android_client_info": {
+          "package_name": "com.rishi.firebaseintegration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017262118453-0fj2ahcb3rq3f61pnecrmrf9fgceqbpk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtjUknbO8V7mmG7T6w5mvi-JEJneJXj5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017262118453-0fj2ahcb3rq3f61pnecrmrf9fgceqbpk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017262118453:android:9ec0ac97ae68372172437c",
+        "android_client_info": {
+          "package_name": "com.rishi.loginfirebaase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017262118453-t6n7ns0e2nrm3njlqupip34a4460cs0l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rishi.loginfirebaase",
+            "certificate_hash": "a02fcb2efe9a111d331e6a7467cac48bc3d1f396"
+          }
+        },
+        {
+          "client_id": "1017262118453-0fj2ahcb3rq3f61pnecrmrf9fgceqbpk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtjUknbO8V7mmG7T6w5mvi-JEJneJXj5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017262118453-0fj2ahcb3rq3f61pnecrmrf9fgceqbpk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017262118453:android:8b1a6a46c12a4e8b72437c",
+        "android_client_info": {
+          "package_name": "com.rishi.loginfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017262118453-ng3u4kun39j04rmtu7loautmeffhu802.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rishi.loginfirebase",
+            "certificate_hash": "a02fcb2efe9a111d331e6a7467cac48bc3d1f396"
+          }
+        },
+        {
+          "client_id": "1017262118453-0fj2ahcb3rq3f61pnecrmrf9fgceqbpk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtjUknbO8V7mmG7T6w5mvi-JEJneJXj5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017262118453-0fj2ahcb3rq3f61pnecrmrf9fgceqbpk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
