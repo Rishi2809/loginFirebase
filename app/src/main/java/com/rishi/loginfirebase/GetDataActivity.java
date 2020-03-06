@@ -2,6 +2,7 @@ package com.rishi.loginfirebase;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -16,28 +17,29 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GetDataActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference;
-    EditText et1, et2, et3, et4;
     Button b1;
     List<Dates> mlist;
-    Dates adapter;
+    MyListAdapter adapter;
     String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_data);
-        et1 = findViewById(R.id.edit_text_name);
-        et2 = findViewById(R.id.edit_text_dob);
-        et3 = findViewById(R.id.edit_text_remindme);
-        et4 = findViewById(R.id.edit_text_ocassion);
-        b1 = findViewById(R.id.retrive);
+        recyclerView = findViewById(R.id.recycler);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mlist = new ArrayList<>();
         uid = getIntent().getStringExtra("uid");
+        Log.d("GetDataActivity",uid);
+        b1 = findViewById(R.id.retrive);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,21 +49,26 @@ public class GetDataActivity extends AppCompatActivity {
     }
 
     public void getData() {
-        reference = database.getReference("Users/f2c9Km7g8Qb9KDfCjMQXrRNRjpw1/birthdays/rishi");
+        reference = database.getReference("Users/" + uid + "/events/");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String name = dataSnapshot.child("name").getValue().toString();
-                String dob = dataSnapshot.child("dob").getValue().toString();
-                String oca = dataSnapshot.child("occassion").getValue().toString();
-                String remindme = dataSnapshot.child("remindme").getValue().toString();
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot npsnapshot : dataSnapshot.getChildren()) {
+                        String name = npsnapshot.child("name").getValue().toString();
+                        String dob = npsnapshot.child("dob").getValue().toString();
+                        String oca = npsnapshot.child("occassion").getValue().toString();
+                        String remindme = npsnapshot.child("remindme").getValue().toString();
 
-                et1.setText(name);
-                et2.setText(dob);
-                et3.setText(remindme);
-                et4.setText(oca);
-//                        name.setText(nameee);
-
+                        Dates dates = new Dates();
+                        dates.setName(name);
+                        dates.setDob(dob);
+                        dates.setOccassion(oca);
+                        dates.setRemindme(remindme);
+                        mlist.add(dates);
+                        Log.d("hello", "hi");
+                    }
+                }
             }
 
             @Override
@@ -69,6 +76,8 @@ public class GetDataActivity extends AppCompatActivity {
 
             }
         });
+        adapter = new MyListAdapter(mlist);
+        recyclerView.setAdapter(adapter);
     }
 
 }

@@ -148,12 +148,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_register:
-                Intent intent = new Intent(MainActivity.this, InsertDataActivity.class);
-                intent.putExtra("uid", "f2c9Km7g8Qb9KDfCjMQXrRNRjp1");
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this, InsertDataActivity.class);
+//                intent.putExtra("uid", "f2c9Km7g8Qb9KDfCjMQXrRNRjp1");
+//                startActivity(intent);
 
-       //         registerUser();
+                registerUser();
                 break;
         }
+    }
+
+    public void login(View view) {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 }
